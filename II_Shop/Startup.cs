@@ -21,7 +21,7 @@ namespace II_Shop {
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services) {
-            services.AddDbContext<AppDbContent>(options => options.UseSqlServer(_confSting.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<AppDbContent>(options => options.UseSqlServer(_confSting.GetConnectionString("DefaultConnection"))); // to get data from dbsettings.json
             //   services.AddTransient<IAllCars, MockCars>();
             //   services.AddTransient<ICarsCategory, MockCategory>();
             services.AddTransient<IAllCars, CarRepository>();

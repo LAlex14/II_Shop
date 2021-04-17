@@ -7,17 +7,22 @@ using System.Linq;
 
 namespace II_Shop.Controllers {
     public class CarsController: Controller {
-        private readonly IAllCars _allCars;
+        private readonly IAllCars _allCars; // variable for interfaces
         private readonly ICarsCategory _allCategories;
 
-        public CarsController(IAllCars iAllCars, ICarsCategory iCarsCat) {
+        // Constructor to read elements from interfaces
+        public CarsController(IAllCars iAllCars, ICarsCategory iCarsCat) { 
             _allCars = iAllCars;
             _allCategories = iCarsCat;
         }
 
+
         [Route("Cars/List")]
         [Route("Cars/List/{category}")]
+
+        // Funtion that return ViewResult
         public ViewResult List(string category) {
+
             string _category = category;
             IEnumerable<Car> cars = null;
             string currCategory = "";
