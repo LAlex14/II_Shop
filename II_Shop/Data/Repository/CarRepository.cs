@@ -1,18 +1,13 @@
 ﻿using II_Shop.Data.interfaces;
 using II_Shop.Data.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
-namespace II_Shop.Data.Repository
-{
-    public class CarRepository : IAllCars
-    {
+namespace II_Shop.Data.Repository {
+    public class CarRepository: IAllCars {
         private readonly AppDbContent appDbContent; // for work with AppDbContent.cs
-        public CarRepository(AppDbContent appDbContent)
-        {
+        public CarRepository(AppDbContent appDbContent) {
             this.appDbContent = appDbContent;
         }
 

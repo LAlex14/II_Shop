@@ -26,7 +26,7 @@ namespace II_Shop.Data.Repository {
                     price = el.car.Price
                 };
                 appDbContent.OrderDetail.Add(orderDetail);
-                
+
             }
             appDbContent.SaveChanges();
         }

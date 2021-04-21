@@ -3,7 +3,7 @@ using II_Shop.Data.Models;
 using System.Collections.Generic;
 
 namespace II_Shop.Data.mocks {
-    public class MockCategory : ICarsCategory {
+    public class MockCategory: ICarsCategory {
         public IEnumerable<Category> AllCategories {
             get {
                 return new List<Category> {

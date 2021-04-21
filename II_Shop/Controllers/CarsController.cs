@@ -11,7 +11,7 @@ namespace II_Shop.Controllers {
         private readonly ICarsCategory _allCategories;
 
         // Constructor to read elements from interfaces
-        public CarsController(IAllCars iAllCars, ICarsCategory iCarsCat) { 
+        public CarsController(IAllCars iAllCars, ICarsCategory iCarsCat) {
             _allCars = iAllCars;
             _allCategories = iCarsCat;
         }
@@ -36,7 +36,7 @@ namespace II_Shop.Controllers {
                     cars = _allCars.Cars.Where(i => i.Category.CategoryName.Equals("Gasoline Car")).OrderBy(i => i.Id);
                     currCategory = "Gasoline Cars:";
                 }
-                
+
             }
 
             var carObj = new CarsListViewModel {

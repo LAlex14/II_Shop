@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace II_Shop.Data.Models
-{
-    public class ShopCartItem
-    {
+﻿namespace II_Shop.Data.Models {
+    public class ShopCartItem {
         public int Id { get; set; }
         public Car car { get; set; }
         public int price { get; set; }

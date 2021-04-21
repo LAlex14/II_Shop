@@ -1,13 +1,13 @@
-using System.Collections.Generic;
-using System.Linq;
 using II_Shop.Data.interfaces;
 using II_Shop.Data.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace II_Shop.Data.mocks {
-    public class MockCars : IAllCars {
+    public class MockCars: IAllCars {
 
         private readonly ICarsCategory _categoryCars = new MockCategory();
-        
+
         public IEnumerable<Car> Cars {
             get {
                 return new List<Car> {
