@@ -5,8 +5,8 @@ using System;
 namespace II_Shop.Data.Repository {
     public class OrdersRepository: IAllOrders {
 
-        private readonly AppDbContent appDbContent;
-        private readonly ShopCart shopCart;
+        private readonly AppDbContent appDbContent; // to edit and save tables in database
+        private readonly ShopCart shopCart; // all items that user want to buy
 
         public OrdersRepository(AppDbContent appDbContent, ShopCart shopCart) {
             this.appDbContent = appDbContent;

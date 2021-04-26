@@ -17,7 +17,7 @@ namespace II_Shop.Controllers {
             return View();
         }
 
-        [HttpPost]
+        [HttpPost] // to work only after post method
         public IActionResult Checkout(Order order) {
             shopCart.listShopItems = shopCart.getShopItems();
             if(shopCart.listShopItems.Count == 0) {

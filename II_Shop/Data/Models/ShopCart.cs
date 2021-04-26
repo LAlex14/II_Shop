@@ -14,8 +14,8 @@ namespace II_Shop.Data.Models {
         public string ShopCartId { get; set; }
         public List<ShopCartItem> listShopItems { get; set; }
 
-        public static ShopCart GetCart(IServiceProvider services) {
-            ISession session = services.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Session;
+        public static ShopCart GetCart(IServiceProvider services) { // check if exist shop cart
+            ISession session = services.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Session; // create object to work with new session
             var context = services.GetService<AppDbContent>();
             string shopCartId = session.GetString("CartId") ?? Guid.NewGuid().ToString();
 
