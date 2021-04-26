@@ -31,10 +31,10 @@ namespace II_Shop.Controllers {
             } else {
                 if(string.Equals("electric", category, System.StringComparison.OrdinalIgnoreCase)) {
                     cars = _allCars.Cars.Where(i => i.Category.CategoryName.Equals("Electric Car")).OrderBy(i => i.Id);
-                    currCategory = "Electric Cars:";
+                    currCategory = "electric";
                 } else if(string.Equals("gasoline", category, System.StringComparison.OrdinalIgnoreCase)) {
                     cars = _allCars.Cars.Where(i => i.Category.CategoryName.Equals("Gasoline Car")).OrderBy(i => i.Id);
-                    currCategory = "Gasoline Cars:";
+                    currCategory = "gasoline";
                 }
 
             }

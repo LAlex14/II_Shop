@@ -5,7 +5,7 @@ namespace II_Shop.Data.Models {
         public string ShortDesc { set; get; }
         public string LongDesc { set; get; }
         public string Img { set; get; }
-        public ushort Price { set; get; }
+        public int Price { set; get; }
         public bool IsFavourite { set; get; }
         public bool Available { set; get; }
         public int CategoryId { set; get; }

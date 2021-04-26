@@ -3,32 +3,29 @@
 <head>
     <title>@ViewBag.Title</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="~/css/style.css" type="text/css">
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-            <a class="navbar-brand" href="/">II Motors Auto Sale</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <a class="navbar-brand text-warning" href="/">II Motors Auto Sale</a>
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item @(ViewContext.HttpContext.Request.Path.ToString() == "/" ? "active" : "")">
                         <a class="nav-link" href="/">Home</a>
-                    <!--    <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a> -->
-                    </li>
-                    <li class="nav-item active">
+                        <!-- <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a> -->
+                    </li> 
+                    <li class="nav-item @(ViewContext.HttpContext.Request.Path.ToString() == "/Cars/List" ? "active" : "")">
                         <a class="nav-link" href="/Cars/List">AllCars</a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item @(ViewContext.HttpContext.Request.Path.ToString() == "/Cars/List/electric" ? "active" : "")">
                         <a class="nav-link" href="/Cars/List/electric">Electric Cars</a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item @(ViewContext.HttpContext.Request.Path.ToString() == "/Cars/List/gasoline" ? "active" : "")">
                         <a class="nav-link" href="/Cars/List/gasoline">Gasoline Cars</a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/ShopCart/">Shop Cart</a>
+                    <li class="nav-item @(ViewContext.HttpContext.Request.Path.ToString() == "/ShopCart" ? "active" : "")">
+                        <a class="nav-link" href="/ShopCart">Shop Cart</a>
                     </li>
 
                 </ul>

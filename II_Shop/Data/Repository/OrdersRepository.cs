@@ -23,7 +23,7 @@ namespace II_Shop.Data.Repository {
                 var orderDetail = new OrderDetail() {
                     CarId = el.car.Id,
                     orderId = order.id,
-                    price = el.car.Price
+                    price = (uint)el.car.Price
                 };
                 appDbContent.OrderDetail.Add(orderDetail);
 

@@ -13,18 +13,18 @@ namespace II_Shop.Data {
                 content.AddRange(
                     new Car {
                         Name = "Tesla Model S",
-                        ShortDesc = "An all-electric five-door liftback sedan",
-                        LongDesc = "Tesla cars are high performance. The Model S can cruise for over 400 miles on a full charge, and recharging is a user-friendly task.",
+                        ShortDesc = "Luxury Large",
+                        LongDesc = "The most recognizable models on the road and part of history for making electric cars viable.",
                         Img = "/img/ModelS.jpg",
-                        Price = 45000,
+                        Price = 69420,
                         IsFavourite = true,
                         Available = true,
                         Category = Categories["Electric Car"]
                     },
                     new Car {
                         Name = "Ford Fiesta",
-                        ShortDesc = "Fiesta is a supermini marketed by Ford",
-                        LongDesc = "Comfortable little car for city life.The name Fiesta (meaning 'party' in Spanish).",
+                        ShortDesc = "Small Hatchback",
+                        LongDesc = "A small car that struggled to find a crowd with low gas prices and rising competition.",
                         Img = "/img/Fiesta.jpg",
                         Price = 11000,
                         IsFavourite = false,
@@ -32,34 +32,134 @@ namespace II_Shop.Data {
                         Category = Categories["Gasoline Car"]
                     },
                     new Car {
-                        Name = "BMW M3",
-                        ShortDesc = "BMW M3 is fast and beautiful car.",
-                        LongDesc = "The BMW M3 is a high-performance version of the BMW 3 Series, developed by BMW's in-house motorsport division, BMW M GmbH. ",
+                        Name = "BMW 3-Series",
+                        ShortDesc = "Sport Small Sedan",
+                        LongDesc = "It’s a compact luxury sedan that's been part of the automaker's lineup for more than 30 years.",
                         Img = "/img/M3.jpg",
-                        Price = 65000,
+                        Price = 41250,
                         IsFavourite = true,
                         Available = true,
                         Category = Categories["Gasoline Car"]
                     },
                     new Car {
-                        Name = "Mercedes C Class",
-                        ShortDesc = "Compact luxury car.",
-                        LongDesc = "The Mercedes-Benz C-Class is a line of compact executive cars produced by Daimler AG.",
+                        Name = "Mercedes C-Class",
+                        ShortDesc = "Luxury Small Sedan",
+                        LongDesc = "The 2021 C-Class should be at the top of your compact luxury sedan shopping list.",
                         Img = "/img/CClass.jpg",
-                        Price = 40000,
+                        Price = 41600,
                         IsFavourite = false,
                         Available = true,
                         Category = Categories["Gasoline Car"]
                     },
                     new Car {
                         Name = "Nissan Leaf",
-                        ShortDesc = "Compact five-door hatchback.",
-                        LongDesc = "Nissan LEAF is a pure electric vehicle powered only by electricity, and its battery can be charged at home.",
+                        ShortDesc = "Small Hatchback",
+                        LongDesc = "It was the first mass-market electric car to be sold in the United States.",
                         Img = "/img/Leaf.jpg",
                         Price = 14000,
+                        IsFavourite = false,
+                        Available = true,
+                        Category = Categories["Electric Car"]
+                    },
+                    new Car {
+                        Name = "Porsche Taycan",
+                        ShortDesc = "Luxury Mid-Size",
+                        LongDesc = "It’s the performance-car brand’s first four-door sedan and first fully electric car.",
+                        Img = "/img/Taycan.jpg",
+                        Price = 79900,
                         IsFavourite = true,
                         Available = true,
                         Category = Categories["Electric Car"]
+                    },
+                    new Car {
+                        Name = "Volvo S60",
+                        ShortDesc = "Mid-Size",
+                        LongDesc = "It’s a mid-size sporty luxury sedan that directly competes with a trio of German models.",
+                        Img = "/img/S60.jpg",
+                        Price = 38950,
+                        IsFavourite = false,
+                        Available = true,
+                        Category = Categories["Gasoline Car"]
+                    },
+                    new Car {
+                        Name = "Kia K5",
+                        ShortDesc = "Mid-Size",
+                        LongDesc = "Has all we’d want in a mid-size sedan, and it comes with a higher grade of materials.",
+                        Img = "/img/K5.jpg",
+                        Price = 23590,
+                        IsFavourite = false,
+                        Available = true,
+                        Category = Categories["Gasoline Car"]
+                    },
+                    new Car {
+                        Name = "Porsche 911",
+                        ShortDesc = "Best Coupe",
+                        LongDesc = "The Porsche 911 is a two-seat sports car that's instantly recognizable as one of the world's best.",
+                        Img = "/img/911.jpg",
+                        Price = 99200,
+                        IsFavourite = true,
+                        Available = true,
+                        Category = Categories["Gasoline Car"]
+                    },
+                    new Car {
+                        Name = "Audi A7",
+                        ShortDesc = "Mid-Size Hatchback",
+                        LongDesc = "A car with a beautiful sloped profile, that heaps luxury into a svelte shape like a great tuxedo.",
+                        Img = "/img/A7.jpg",
+                        Price = 69200,
+                        IsFavourite = true,
+                        Available = true,
+                        Category = Categories["Gasoline Car"]
+                    },
+                    new Car {
+                        Name = "Jaguar I-Pace",
+                        ShortDesc = "Svelte Crossover",
+                        LongDesc = "Merges the powertrain technology of the future with everything expected in a prestige luxury.",
+                        Img = "/img/IPace.jpg",
+                        Price = 71490,
+                        IsFavourite = false,
+                        Available = true,
+                        Category = Categories["Electric Car"]
+                    },
+                    new Car {
+                        Name = "Audi E-Tron",
+                        ShortDesc = "SUV and Sportback",
+                        LongDesc = "All the comfort, luxury, and features of Audi’s other premium models, with a fully electric twist.",
+                        Img = "/img/ETron.jpg",
+                        Price = 65900,
+                        IsFavourite = false,
+                        Available = true,
+                        Category = Categories["Electric Car"]
+                    },
+                    new Car {
+                        Name = "Tesla Model X",
+                        ShortDesc = "Large Hatchback",
+                        LongDesc = "A fully electric vehicle that's more of a crossover than a true SUV and based on the Tesla Model S.",
+                        Img = "/img/ModelX.jpg",
+                        Price = 83700,
+                        IsFavourite = true,
+                        Available = true,
+                        Category = Categories["Electric Car"]
+                    },
+                    new Car {
+                        Name = "Mercedes-Benz G Class",
+                        ShortDesc = "Luxury Large SUV",
+                        LongDesc = "The G-Class SUV is both an off-road and a luxury icon. It's roomy, trucky, and expensive.",
+                        Img = "/img/GClass.jpg",
+                        Price = 131400,
+                        IsFavourite = true,
+                        Available = true,
+                        Category = Categories["Gasoline Car"]
+                    },
+                    new Car {
+                        Name = "Toyota Land Cruiser",
+                        ShortDesc = "Luxury Large SUV",
+                        LongDesc = "A luxury four-wheel drive vehicle produced by the Japanese automobile manufacturer Toyota.",
+                        Img = "/img/LandCruiser.jpg",
+                        Price = 85665,
+                        IsFavourite = true,
+                        Available = true,
+                        Category = Categories["Gasoline Car"]
                     }
                     );
 
