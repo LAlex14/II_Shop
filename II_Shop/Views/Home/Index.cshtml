@@ -3,5 +3,5 @@
 <h1>Best cars:</h1>
 <div class="row mt-5 mb-2">
     @{ foreach(Car car in Model.favCars) {
-            @Html.Partial("AllCars", car) } }
+        @await Html.PartialAsync("AllCars", car) } }
 </div>
