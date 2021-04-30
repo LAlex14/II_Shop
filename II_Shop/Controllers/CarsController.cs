@@ -26,14 +26,16 @@ namespace II_Shop.Controllers {
             string _category = category;
             IEnumerable<Car> cars = null;
             string currCategory = "";
+            cars = _allCars.Cars.Where(i => i.Available);
             if(string.IsNullOrEmpty(category)) {
-                cars = _allCars.Cars.OrderBy(i => i.Id);
+                // .Available.Equals("True")).  //.OrderBy(i => i.Id)
+                cars = cars.OrderBy(i => i.Id);
             } else {
                 if(string.Equals("electric", category, System.StringComparison.OrdinalIgnoreCase)) {
-                    cars = _allCars.Cars.Where(i => i.Category.CategoryName.Equals("Electric Car")).OrderBy(i => i.Id);
+                    cars = cars.Where(i => i.Category.CategoryName.Equals("Electric Car")).OrderBy(i => i.Id);
                     currCategory = "electric";
                 } else if(string.Equals("gasoline", category, System.StringComparison.OrdinalIgnoreCase)) {
-                    cars = _allCars.Cars.Where(i => i.Category.CategoryName.Equals("Gasoline Car")).OrderBy(i => i.Id);
+                    cars = cars.Where(i => i.Category.CategoryName.Equals("Gasoline Car")).OrderBy(i => i.Id);
                     currCategory = "gasoline";
                 }
 

@@ -1,13 +1,14 @@
-﻿@model Car 
-@using System.Globalization;
+﻿@model Car
 
 <div class="col-lg-4">
     <img class="img-thumbnail" src="@Model.Img" alt="@Model.Name" />
     <h2>@Model.Name</h2>
-    <p>@Model.ShortDesc <u>
-    @if(@Model.CategoryId == 1) {<a style="color: black;" href="/Cars/List/electric">Electric Car</a> } else if(@Model.CategoryId == 2) { <a style="color: black;" href="/Cars/List/gasoline">Gasoline Car</a>}
-    </u></p>
-    <p>@Model.LongDesc</p>
-    <p><b>Price:</b> @Model.Price.ToString("C", CultureInfo.CreateSpecificCulture("eu-ES"))</p>
-    <p><a class="btn btn-warning" asp-controller="ShopCart" asp-action="addToCart" asp-route-Id="@Model.Id">Add to Cart</a></p>
+    <p>
+        @Model.ShortDesc <u>
+        <a style="color: black;" href=@(Model.Category.CategoryName == "Gasoline Car" ? "/Cars/List/gasoline" : "/Cars/List/electric")>@Model.Category.CategoryName</a>
+    </u>
+</p>
+<p>@Model.LongDesc</p>
+<p><b>Price:</b> @Model.Price.ToString("C", CultureInfo.CreateSpecificCulture("eu-ES"))</p>
+<p><a class="btn btn-warning" asp-controller="ShopCart" asp-action="addToCart" asp-route-Id="@Model.Id">Add to Cart</a></p>
 </div> 

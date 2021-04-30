@@ -3,12 +3,15 @@
 <div class="container">
     @foreach (var el in Model.shopCart.listShopItems)
             {
-    <div class="alert alert-warning mt-3">
-        <b>Car:</b> @el.car.Name <br />
-        <b>Price:</b> @el.car.Price.ToString("c") <br />
+    <div class="alert alert-warning mt-3 d-flex justify-content-between">
+        <div class="item-info">
+            <b>Car:</b> @el.car.Name <br />
+            <b>Price:</b> @el.car.Price.ToString("C", CultureInfo.CreateSpecificCulture("eu-ES")) <br />
+        </div>
+         <button class="btn btn-danger">Delete</button>
     </div>
-            }
+    }
     <hr/>
-    <a class="btn btn-danger" asp-controller="Order" asp-action="Checkout">Pay</a> 
+    <a class="btn btn-success" asp-controller="Order" asp-action="Checkout">Pay</a> 
 
 </div>
