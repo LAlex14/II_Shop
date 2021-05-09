@@ -30,5 +30,15 @@ namespace II_Shop.Controllers {
             }
             return RedirectToAction("Index");
         }
+
+        public RedirectToActionResult deleteFromCart(int id)
+        {
+            var item = _shopCart.getShopItems().FirstOrDefault(i => i.Id == id);
+            if (item != null)
+            {
+                _shopCart.DeleteFromCart(item);
+            }
+            return RedirectToAction("Index");
+        }
     }
 }

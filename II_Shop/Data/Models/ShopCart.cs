@@ -14,6 +14,11 @@ namespace II_Shop.Data.Models {
         public string ShopCartId { get; set; }
         public List<ShopCartItem> listShopItems { get; set; }
 
+        private ShopCartItem getCarFromShopCart(int carId)
+        {
+            var shopItems = getShopItems();
+            return shopItems.FirstOrDefault(car => car.Id == carId);
+        }
         public static ShopCart GetCart(IServiceProvider services) { // check if exist shop cart
             ISession session = services.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Session; // create object to work with new session
             var context = services.GetService<AppDbContent>();
@@ -31,6 +36,13 @@ namespace II_Shop.Data.Models {
                 price = car.Price
             });
 
+            appDbContent.SaveChanges();
+
+        }
+
+        public void DeleteFromCart(ShopCartItem car)
+        {
+            appDbContent.ShopCartItem.Remove(getCarFromShopCart(car.Id));
             appDbContent.SaveChanges();
 
         }
