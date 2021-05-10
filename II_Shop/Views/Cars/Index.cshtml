@@ -1,0 +1,7 @@
+﻿@model IEnumerable<II_Shop.Data.Models.Car>
+
+<h1>All cars available based on your search:</h1>
+<div class="row mt-5 mb-2">
+    @{ foreach(Car car in Model) {
+        @await Html.PartialAsync("AllCars", car) } }
+</div>

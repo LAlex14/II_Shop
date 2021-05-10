@@ -2,8 +2,10 @@ using II_Shop.Data.interfaces;
 using II_Shop.Data.Models;
 using II_Shop.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace II_Shop.Controllers {
     public class CarsController: Controller {
@@ -16,6 +18,11 @@ namespace II_Shop.Controllers {
             _allCategories = iCarsCat;
         }
 
+        [Route("Cars/Index")]
+        public ViewResult Search(string searchWord)
+        {
+            return View("Index", _allCars.Cars.Where( c => c.Name.Contains(searchWord, StringComparison.InvariantCultureIgnoreCase)));
+        }
 
         [Route("Cars/List")]
         [Route("Cars/List/{category}")]
