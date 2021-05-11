@@ -8,8 +8,9 @@
             <b>Car:</b> @el.car.Name <br />
             <b>Price:</b> @el.car.Price.ToString("C", CultureInfo.CreateSpecificCulture("eu-ES")) <br />
         </div>
-         <img src="~/img/closeBtn.png" style="margin: 8px 0px; height: 32px;" asp-controller="ShopCart" asp-action="deleteFromCart" asp-route-Id="@el.Id" alt="
-              Delete item">
+        <a asp-controller="ShopCart" asp-action="deleteFromCart" asp-route-Id="@el.Id">
+            <img src="~/img/closeBtn.png" style="margin: 8px 0px; height: 32px;" alt="Delete item">
+        </a>
     </div>
     }
     <hr/>
