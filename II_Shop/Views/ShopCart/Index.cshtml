@@ -1,18 +1,17 @@
-﻿ @model ShopCartViewModel
+﻿@model ShopCartViewModel
 
 <div class="container">
     @foreach (var el in Model.shopCart.listShopItems)
-            {
-    <div class="alert alert-warning mt-3 d-flex justify-content-between">
-        <div class="item-info">
-            <b>Car:</b> @el.car.Name <br />
-            <b>Price:</b> @el.car.Price.ToString("C", CultureInfo.CreateSpecificCulture("eu-ES")) <br />
-        </div>
-         <img src="~/img/closeBtn.png" style="margin: 8px 0px; height: 32px;" asp-controller="ShopCart" asp-action="deleteFromCart" asp-route-Id="@el.Id" alt="
-              Delete item">
+    {
+<div class="alert alert-warning mt-3 d-flex justify-content-between">
+    <div class="item-info">
+        <b>Car:</b> @el.car.Name <br />
+        <b>Price:</b> @el.car.Price.ToString("C", CultureInfo.CreateSpecificCulture("eu-ES")) <br />
     </div>
-    }
-    <hr/>
-    <a class="btn btn-success" asp-controller="Order" asp-action="Checkout">Pay</a> 
+    <img src="~/img/closeBtn.png" style="margin: 8px 0px; height: 32px;" asp-controller="ShopCart" asp-action="Delete" asp-route-Id="@el.Id" alt="
+              Delete item">
+</div>}
+    <hr />
+    <a class="btn btn-success" asp-controller="Order" asp-action="Checkout">Pay</a>
 
 </div>

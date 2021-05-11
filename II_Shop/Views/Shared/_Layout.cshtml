@@ -29,24 +29,24 @@
                     </li>
 
                 </ul>
-                <!--  <span class="navbar-brand text-dark" style="visibility: hidden;">II Motors Auto Sale</span> -->
+                <span class="navbar-brand text-dark" style="visibility: hidden;">II Motors Auto Sale</span>
                 <form class="form-inline mt-2 mt-md-0" asp-controller="Cars" asp-action="Search">
                     <input class="form-control mr-sm-2" type="text" name="searchWord" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </div>
-            </nav>
-        </header>
+        </nav>
+    </header>
 
-        <div class="container mt-5">
-            @RenderBody()
-        </div>
+    <div class="container mt-5">
+        @RenderBody()
+    </div>
 
-        <footer class="container">
-            <p class="float-right"><a href="#">Back to top</a></p>
-            <p>© 2021 Company, Inc. · <a asp-controller="Home" asp-action="Privacy">Privacy</a> · <a asp-controller="Home" asp-action="Terms">Terms</a></p>
-        </footer>
+    <footer class="container">
+        <p class="float-right" ><a href="#">Back to top</a></p>
+        <p>© 2021 Company, Inc. · <a asp-controller="Home" asp-action="Privacy">Privacy</a> · <a asp-controller="Home" asp-action="Terms">Terms</a></p>
+    </footer>
 
-        <script src="~/js/bootstrap.min.js"></script>
-    </body>
-    </html>
+    <script src="~/js/bootstrap.min.js"></script>
+</body>
+</html>

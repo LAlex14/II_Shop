@@ -23,7 +23,7 @@ namespace II_Shop.Controllers {
             };
             return View(obj1);
         }
-        public RedirectToActionResult addToCart(int id) {
+        public RedirectToActionResult Add(int id) {
             var item = _carRep.Cars.FirstOrDefault(i => i.Id == id);
             if(item != null) {
                 _shopCart.AddToCart(item);
@@ -31,7 +31,7 @@ namespace II_Shop.Controllers {
             return RedirectToAction("Index");
         }
 
-        public RedirectToActionResult deleteFromCart(int id)
+        public RedirectToActionResult Delete(int id)
         {
             var item = _shopCart.getShopItems().FirstOrDefault(i => i.Id == id);
             if (item != null)
@@ -40,5 +40,6 @@ namespace II_Shop.Controllers {
             }
             return RedirectToAction("Index");
         }
+
     }
 }
