@@ -33,6 +33,7 @@ namespace II_Shop.Controllers {
         }
 
         public IActionResult Complete() {
+            shopCart.DeleteAllFromCart();
             ViewBag.Message = "Your order has been successfully processed";
             return View();
         }

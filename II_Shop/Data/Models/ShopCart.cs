@@ -7,6 +7,7 @@ using System.Linq;
 
 namespace II_Shop.Data.Models {
     public class ShopCart {
+
         private readonly AppDbContent appDbContent;
         public ShopCart(AppDbContent appDbContent) {
             this.appDbContent = appDbContent;
@@ -37,14 +38,18 @@ namespace II_Shop.Data.Models {
             });
 
             appDbContent.SaveChanges();
-
         }
 
         public void DeleteFromCart(ShopCartItem car)
         {
             appDbContent.ShopCartItem.Remove(getCarFromShopCart(car.Id));
             appDbContent.SaveChanges();
+        }
 
+        public void DeleteAllFromCart()
+        {
+            appDbContent.ShopCartItem.RemoveRange(appDbContent.ShopCartItem.ToList());
+            appDbContent.SaveChanges();
         }
 
         public List<ShopCartItem> getShopItems() {

@@ -10,5 +10,5 @@
 </p>
 <p>@Model.LongDesc</p>
 <p><b>Price:</b> @Model.Price.ToString("C", CultureInfo.CreateSpecificCulture("eu-ES"))</p>
-<p><a class="btn btn-warning" asp-controller="ShopCart" asp-action="addToCart" asp-route-Id="@Model.Id">Add to Cart</a></p>
+<p><a class="btn btn-warning" asp-controller="ShopCart" asp-action="Add" asp-route-Id="@Model.Id">Add to Cart</a></p>
 </div> 
