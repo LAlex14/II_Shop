@@ -1,28 +1,21 @@
 ﻿@model HomeViewModel
 
-<h1 style="color: green;
-        text-align: center;
+        <h1 class="title"
+            style="color: green;
         font-family: verdana;
         line-height:1.4">
-    Welcome to our II Motors Autosale website!
-</h1>
-<p>
-      
-</p>
-<h3 style="text-align: center">
-  Shop, buy & finance easily! Find your match!
-</h3>
-<p>
+            Welcome to our II Motors Autosale website!
+        </h1>
+        <h3>
+            Shop, buy & finance easily! Find your match!
+        </h3>
 
-</p>
+        <div class="d-flex justify-content-center">
+            @await Html.PartialAsync("Carousel")
+        </div>
 
-@await Html.PartialAsync("Carousel")
-<p>
-      
-</p>
-<h2>These are our best sellers: </h2>
-<div class="row mt-5 mb-2">
-    @{ foreach (Car car in Model.favCars)
-        {
-@await Html.PartialAsync("AllCars", car) } }
-</div>
+        <h2 class="m-2">These are our best sellers: </h2>
+        <div class="row mt-5 mb-2">
+            @{ foreach(Car car in Model.favCars) {
+                    @await Html.PartialAsync("AllCars", car) } }
+        </div>
