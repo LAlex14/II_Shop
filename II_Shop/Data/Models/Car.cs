@@ -7,8 +7,13 @@ namespace II_Shop.Data.Models {
         public string Img { set; get; }
         public int Price { set; get; }
         public bool IsFavourite { set; get; }
-        public bool Available { set; get; }
+        public int Stock{ set; get; }
         public int CategoryId { set; get; }
         public virtual Category Category { set; get; }
+
+        public bool Available
+        {
+            get { return Stock > 0; }
+        }
     }
 }

@@ -32,7 +32,7 @@ namespace II_Shop.Migrations
                     Img = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Price = table.Column<int>(type: "int", nullable: false),
                     IsFavourite = table.Column<bool>(type: "bit", nullable: false),
-                    Available = table.Column<bool>(type: "bit", nullable: false),
+                    Stock = table.Column<int>(type: "int", nullable: false),
                     CategoryId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>

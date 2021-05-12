@@ -52,6 +52,26 @@ namespace II_Shop.Data.Models {
             appDbContent.SaveChanges();
         }
 
+        public void DecreaseStock()
+        {
+            var shopList = getShopItems();
+
+            foreach (var item in shopList)
+                item.car.Stock--;
+        }
+
+        public void UpdateStock()
+        {
+            DecreaseStock();
+
+            var shopList = getShopItems();
+
+            foreach (var item in shopList)
+                appDbContent.Car.Update(item.car);
+
+            appDbContent.SaveChanges();
+        }
+
         public List<ShopCartItem> getShopItems() {
             return appDbContent.ShopCartItem.Where(c => c.ShopCartId == ShopCartId).Include(s => s.car).ToList();
         }
