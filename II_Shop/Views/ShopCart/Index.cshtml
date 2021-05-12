@@ -1,9 +1,9 @@
 ﻿@model ShopCartViewModel
 
-
+<div class="container mt-4">
     @foreach(var el in Model.shopCart.listShopItems) {
         <div class="alert alert-warning mt-3 d-flex justify-content-between">
-            <div class="item-info text-left">
+            <div class="item-info text-start">
                 <b>Car:</b> @el.car.Name <br />
                 <b>Price:</b> @el.car.Price.ToString("C", CultureInfo.CreateSpecificCulture("eu-ES")) <br />
             </div>
@@ -14,3 +14,4 @@
     }
     <hr />
     <a class="btn btn-success" asp-controller="Order" asp-action="Checkout">Pay</a>
+    </div>

@@ -1,14 +1,14 @@
 ﻿@model Car
 
-<div class="col-lg-4">
-    <img class="img-thumbnail" src="@Model.Img" alt="@Model.Name" />
-    <h2>@Model.Name</h2>
-    <p>
-        @Model.ShortDesc <u>
-        <a style="color: black;" href=@(Model.Category.CategoryName == "Gasoline Car" ? "/Cars/List/gasoline" : "/Cars/List/electric")>@Model.Category.CategoryName</a>
-    </u>
-</p>
-<p>@Model.LongDesc</p>
-<p><b>Price:</b> @Model.Price.ToString("C", CultureInfo.CreateSpecificCulture("eu-ES"))</p>
-<p><a class="btn btn-warning" asp-controller="ShopCart" asp-action="Add" asp-route-Id="@Model.Id">Add to Cart</a></p>
-</div> 
+        <div class="col-lg-4">
+            <img class="img-thumbnail" src="@Model.Img" alt="@Model.Name" />
+            <h2>@Model.Name</h2>
+            <p>
+                @Model.ShortDesc <u>
+                    <a style="color: black;" href=@(Model.Category.CategoryName == "Gasoline Car" ? "/Cars/List/gasoline" : "/Cars/List/electric")>@Model.Category.CategoryName</a>
+                </u>
+            </p>
+            <p>@Model.LongDesc</p>
+            <p><b>Price:</b> @Model.Price.ToString("C", CultureInfo.CreateSpecificCulture("eu-ES"))</p>
+            <p><a class="btn btn-warning" asp-controller="ShopCart" asp-action="Add" asp-route-Id="@Model.Id">Add to Cart</a></p>
+        </div>
