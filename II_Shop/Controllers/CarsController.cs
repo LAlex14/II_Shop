@@ -27,7 +27,7 @@ namespace II_Shop.Controllers {
         public IActionResult Search(string searchWord)
         {
            
-            return View("Index", _allCars.Cars.Where(c => c.Name.Contains(searchWord, StringComparison.InvariantCultureIgnoreCase) || searchWord==null).ToList());
+            return View("Index", _allCars.Cars.Where(c => c.Name.Contains(searchWord, StringComparison.InvariantCultureIgnoreCase)));
         }
 
        
