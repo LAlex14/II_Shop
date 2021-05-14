@@ -24,6 +24,7 @@ namespace II_Shop.Controllers {
         //    return View("Index", _allCars.Cars.Where( c => c.Name.Contains(searchWord, StringComparison.InvariantCultureIgnoreCase)));
         //}
 
+        // search
         public IActionResult Search(string searchWord)
         {
            
