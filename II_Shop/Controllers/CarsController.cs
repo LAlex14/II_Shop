@@ -19,10 +19,18 @@ namespace II_Shop.Controllers {
         }
 
         [Route("Cars/Index")]
-        public ViewResult Search(string searchWord)
+        //public ViewResult Search(string searchWord)
+        //{
+        //    return View("Index", _allCars.Cars.Where( c => c.Name.Contains(searchWord, StringComparison.InvariantCultureIgnoreCase)));
+        //}
+
+        public IActionResult Search(string searchWord)
         {
-            return View("Index", _allCars.Cars.Where( c => c.Name.Contains(searchWord, StringComparison.InvariantCultureIgnoreCase)));
+           
+            return View("Index", _allCars.Cars.Where(c => c.Name.Contains(searchWord, StringComparison.InvariantCultureIgnoreCase) || searchWord==null).ToList());
         }
+
+       
 
         [Route("Cars/List")]
         [Route("Cars/List/{category}")]

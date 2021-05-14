@@ -15,7 +15,7 @@ namespace II_Shop.Data.Models {
         public string ShopCartId { get; set; }
         public List<ShopCartItem> listShopItems { get; set; }
 
-        private ShopCartItem getCarFromShopCart(int carId)
+        public ShopCartItem getCarFromShopCart(int carId)
         {
             var shopItems = getShopItems();
             return shopItems.FirstOrDefault(car => car.Id == carId);
@@ -62,7 +62,7 @@ namespace II_Shop.Data.Models {
 
         public void UpdateStock()
         {
-            DecreaseStock();
+            //DecreaseStock();
 
             var shopList = getShopItems();
 
