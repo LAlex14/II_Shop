@@ -15,11 +15,6 @@ namespace II_Shop.Controllers {
         }
 
         public IActionResult Checkout() {
-            return View();
-        }
-
-        [HttpPost] // to work only after post method
-        public IActionResult Checkout(Order order) {
 
             shopCart.listShopItems = shopCart.getShopItems();
 
@@ -33,20 +28,28 @@ namespace II_Shop.Controllers {
 
             string lista = "";
 
-            foreach (var item in shopCart.listShopItems)
-                if (item.car.Stock < 0)
-                {
-                    if (!lista.Contains(item.car.Name))
+            foreach(var item in shopCart.listShopItems)
+                if(item.car.Stock < 0) {
+                    if(!lista.Contains(item.car.Name))
                         lista += item.car.Name + ", ";
                     ModelState.AddModelError("", "We don't dispose of this amount of cars you want to order");
                 }
 
-            if(!lista.Equals(""))
-            {
+            if(!lista.Equals("")) {
                 lista = lista.Remove(lista.Length - 2);
                 ViewBag.Message = "We don't dispose of this amount of " + lista + " you want to order";
                 return View("Errors");
             }
+
+            return View();
+        }
+
+        [HttpPost] // to work only after post method
+        public IActionResult Checkout(Order order) {
+
+            shopCart.listShopItems = shopCart.getShopItems();
+
+            shopCart.DecreaseStock();
 
             if (ModelState.IsValid) {
                 allOrders.CreateOrder(order);
