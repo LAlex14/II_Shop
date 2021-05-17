@@ -1,7 +1,9 @@
-﻿using II_Shop.Data.interfaces;
+﻿using II_Shop.Data;
+using II_Shop.Data.interfaces;
 using II_Shop.Data.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace II_Shop.Controllers {
     public class OrderController: Controller {
@@ -24,20 +26,27 @@ namespace II_Shop.Controllers {
                 return View("Errors");
             }
 
+            Dictionary<string, int> dStock = new Dictionary<string, int>();
+            foreach (var item in shopCart.listShopItems)
+                if(!dStock.ContainsKey(item.car.Name))
+                    dStock.Add(item.car.Name, item.car.Stock);
+
             shopCart.DecreaseStock();
 
             string lista = "";
-
+                    
             foreach(var item in shopCart.listShopItems)
                 if(item.car.Stock < 0) {
-                    if(!lista.Contains(item.car.Name))
-                        lista += item.car.Name + ", ";
+                    if (!lista.Contains(item.car.Name))
+                    {
+                        lista += dStock[item.car.Name].ToString() + " " + item.car.Name + ", ";
+                    }
                     ModelState.AddModelError("", "We don't dispose of this amount of cars you want to order");
                 }
 
             if(!lista.Equals("")) {
                 lista = lista.Remove(lista.Length - 2);
-                ViewBag.Message = "We don't dispose of this amount of " + lista + " you want to order";
+                ViewBag.Message = "Sorry, we do not have the amount of cars you want to order. We only have: " + lista;
                 return View("Errors");
             }
 

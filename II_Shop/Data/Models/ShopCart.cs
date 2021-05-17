@@ -62,7 +62,6 @@ namespace II_Shop.Data.Models {
 
         public void UpdateStock()
         {
-            //DecreaseStock();
 
             var shopList = getShopItems();
 
