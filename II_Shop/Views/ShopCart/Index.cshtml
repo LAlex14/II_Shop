@@ -1,6 +1,9 @@
 ﻿@model ShopCartViewModel
 
 <div class="container mt-4">
+
+    <h3 class="@(Model.shopCart.listShopItems.Count == 0 ? "" : "d-none")">You should add items to the cart</h3>
+
     @foreach(var el in Model.shopCart.listShopItems) {
         <div class="alert alert-warning mt-3 d-flex justify-content-between">
             <div class="item-info text-start">
@@ -14,4 +17,4 @@
     }
     <hr />
     <a class="btn btn-success" asp-controller="Order" asp-action="Checkout">Complete Order</a>
-    </div>
+</div>
