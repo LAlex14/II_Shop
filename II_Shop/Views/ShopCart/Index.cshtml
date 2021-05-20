@@ -16,5 +16,6 @@
         </div>
     }
     <hr />
-    <a class="btn btn-success" asp-controller="Order" asp-action="Checkout">Complete Order</a>
+    <!-- <a class="btn btn-success" asp-controller="Order" asp-action="Checkout">Complete Order</a> -->
+    <button class="btn btn-success @(Model.shopCart.listShopItems.Count == 0 ? "d-none" : "")" onclick="location.href='@Url.Action("Checkout", "Order")'" @(Model.shopCart.listShopItems.Count == 0 ? "disabled" : "")>Complete Order</button>
 </div>

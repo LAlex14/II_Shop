@@ -46,7 +46,7 @@ namespace II_Shop.Controllers {
 
             if(!lista.Equals("")) {
                 lista = lista.Remove(lista.Length - 2);
-                ViewBag.Message = "Sorry, we do not have the amount of cars you want to order. We only have: " + lista;
+                ViewBag.Message = "Sorry, we do not have the amount of cars you want to order. We only have: " + lista + " car(s).";
                 return View("Errors");
             }
 
