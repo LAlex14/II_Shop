@@ -75,7 +75,7 @@ namespace II_Shop.Controllers {
 
             shopCart.DeleteAllFromCart();
 
-            ViewBag.Message = "Your order has been successfully processed";
+            ViewBag.Message = "Your order has been successfully processed. We will contact you soon to establish the billing data, payment method & delivery process of your order.";
             return View();
         }
 

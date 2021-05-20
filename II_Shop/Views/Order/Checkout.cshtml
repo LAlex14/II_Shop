@@ -6,41 +6,70 @@
     <div style="width:300px;" class="mx-auto row mb-5">
         <form asp-action="Checkout" method="post" class="form-horizontal">
             <div class="form-group">
-                <label asp-for="name">NAME:</label>
-                <div class="col-12">
-                    <input asp-for="name" class="form-control" required />
-                    <span asp-validation-for="name" class="text-danger"></span>
+                <label asp-for="name">Name:</label>
+                <div class="col-12 mb-2">
+                    <input asp-for="name" class="form-control" pattern="[A-Za-z' -]{1,32}"  required />
+                    <details class="text-start text-muted small">
+                        <summary class="small">Validation rules</summary>
+                            <ul class="small">
+                                <li>Can only contain letters and a few special characters ( ' and - )</li>
+                                <li>Must be between 1 and 32 characters long</li>
+                            </ul>
+                                            </details>
                 </div>
             </div>
-            <div class="form-group">
-                <label asp-for="surname">SURNAME:</label>
+            <div class="form-group mb-2">
+                <label asp-for="surname">Surname:</label>
                 <div class="col-12">
-                    <input asp-for="surname" class="form-control" required />
-                    <span asp-validation-for="surname" class="text-danger"></span>
+                    <input asp-for="surname" class="form-control" pattern="[A-Za-z' -]{1,32}" required />
+                    <details class="text-start text-muted small">
+                        <summary class="small">Validation rules</summary>
+                            <ul class="small">
+                                <li>Can only contain letters and a few special characters ( ' and - )</li>
+                                <li>Must be between 1 and 32 characters long</li>
+                            </ul>
+                    </details>
                 </div>
             </div>
-            <div class="form-group">
-                <label asp-for="adress">ADRESS:</label>
+            <div class="form-group mb-2">
+                <label asp-for="adress">Complete address:</label>
                 <div class="col-12">
-                    <input asp-for="adress" class="form-control" required />
-                    <span asp-validation-for="adress" class="text-danger"></span>
+                    <input asp-for="adress" class="form-control" pattern="[a-zA-Z0-9 /\\@@#$%&,().+-]{3,100}" required />
+                    <details class="text-start text-muted small">
+                        <summary class="small">Recommended format and validation vules</summary>
+                        <small>Business's name (if applicable), Street address, City, State and ZIP code, Country</small>
+                            <ul class="small">
+                                <li>Can only contain letters, digits and a few special characters</li>
+                                <li>Must be between 3 and 100 characters long</li>
+                            </ul>
+                        
+                    </details>
+                </div>
+                
+            </div>
+            <div class="form-group mb-2">
+                <label asp-for="phone">Phone number:</label>
+                <div class="col-12">
+                    <input asp-for="phone" class="form-control" pattern="\+\d{1,6}-\d{8,20}" required />
+                    <details class="text-start text-muted small">
+                        <summary class="small">Requested format: +(country code)-(phone)</summary>
+                        <ul class="small">
+                            <li>Country code must be between 1 and 6 digits long</li>
+                            <li>Phone number must be between 8 and 20 digits long</li>
+                        </ul>
+                    </details>
                 </div>
             </div>
-            <div class="form-group">
-                <label asp-for="phone">PHONE:</label>
+            <div class="form-group mb-2">
+                <label asp-for="email">Email:</label>
                 <div class="col-12">
-                    <input asp-for="phone" class="form-control" required />
-                    <span asp-validation-for="phone" class="text-danger"></span>
+                    <input asp-for="email" class="form-control" pattern="[a-z0-9._%+-]+@@[a-z0-9.-]+\.[a-z]{2,4}$" required />
+                    <div class="text-start text-muted small">
+                        <small>Example: firstname.surname@domain.tld</small>
+                    </div> 
                 </div>
             </div>
-            <div class="form-group">
-                <label asp-for="email">EMAIL:</label>
-                <div class="col-12">
-                    <input asp-for="email" class="form-control" required />
-                    <span asp-validation-for="email" class="text-danger"></span>
-                </div>
-            </div>
-            <input class="mt-3 btn btn-success" type="submit" value="Place Order" />
+            <input class="mt-2 btn btn-success" type="submit" value="Place Order" />
 
         </form>
         <h3>@ViewBag.Message</h3>
