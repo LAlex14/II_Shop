@@ -179,10 +179,8 @@ namespace II_Shop.Data {
                         Stock = 6,
                         Category = Categories["Gasoline Car"]
                     }
-                    ); ;
-
+                    ); 
             }
-
             content.SaveChanges();
         }
 
@@ -199,15 +197,12 @@ namespace II_Shop.Data {
                         CategoryName = "Gasoline Car",
                         Desc = "Car which is propelled by one internal combustion engine, using different types of fuel."}
                     };
-
                     category = new Dictionary<string, Category>();
                     foreach(Category el in list)
                         category.Add(el.CategoryName, el);
                 }
                 return category;
             }
-
         }
-
     }
 }

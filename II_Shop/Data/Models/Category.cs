@@ -6,6 +6,5 @@ namespace II_Shop.Data.Models {
         public string CategoryName { set; get; }
         public string Desc { set; get; }
         public List<Car> Cars { set; get; }
-
     }
 }

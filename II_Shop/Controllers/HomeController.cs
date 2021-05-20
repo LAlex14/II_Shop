@@ -17,15 +17,12 @@ namespace II_Shop.Controllers {
             return View(homeCars);
         }
 
-        public ViewResult Privacy()
-        {
+        public ViewResult Privacy() {
             return View();
         }
 
-        public ViewResult Terms()
-        {
+        public ViewResult Terms() {
             return View();
         }
-
     }
 }

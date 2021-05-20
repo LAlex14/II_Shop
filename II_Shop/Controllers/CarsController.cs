@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace II_Shop.Controllers {
     public class CarsController: Controller {
@@ -19,26 +18,14 @@ namespace II_Shop.Controllers {
         }
 
         [Route("Cars/Index")]
-        //public ViewResult Search(string searchWord)
-        //{
-        //    return View("Index", _allCars.Cars.Where( c => c.Name.Contains(searchWord, StringComparison.InvariantCultureIgnoreCase)));
-        //}
-
-        // search
-        public IActionResult Search(string searchWord)
-        {
-           
+        public IActionResult Search(string searchWord) {
             return View("Index", _allCars.Cars.Where(c => c.Name.Contains(searchWord, StringComparison.InvariantCultureIgnoreCase)));
         }
 
-       
-
         [Route("Cars/List")]
         [Route("Cars/List/{category}")]
-
         // Funtion that return ViewResult
         public ViewResult List(string category) {
-
             string _category = category;
             IEnumerable<Car> cars = null;
             string currCategory = "";
@@ -54,7 +41,6 @@ namespace II_Shop.Controllers {
                     cars = cars.Where(i => i.Category.CategoryName.Equals("Gasoline Car")).OrderBy(i => i.Id);
                     currCategory = "gasoline";
                 }
-
             }
 
             var carObj = new CarsListViewModel {

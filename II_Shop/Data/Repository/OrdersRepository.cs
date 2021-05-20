@@ -7,7 +7,6 @@ namespace II_Shop.Data.Repository {
 
         private readonly AppDbContent appDbContent; // to edit and save tables in database
         private readonly ShopCart shopCart; // all items that user want to buy
-
         public OrdersRepository(AppDbContent appDbContent, ShopCart shopCart) {
             this.appDbContent = appDbContent;
             this.shopCart = shopCart;
@@ -26,7 +25,6 @@ namespace II_Shop.Data.Repository {
                     price = (uint)el.car.Price
                 };
                 appDbContent.OrderDetail.Add(orderDetail);
-
             }
             appDbContent.SaveChanges();
         }

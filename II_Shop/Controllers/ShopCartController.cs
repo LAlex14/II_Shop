@@ -31,15 +31,12 @@ namespace II_Shop.Controllers {
             return RedirectToAction("Index");
         }
 
-        public RedirectToActionResult Delete(int id)
-        {
+        public RedirectToActionResult Delete(int id) {
             var item = _shopCart.getShopItems().FirstOrDefault(i => i.Id == id);
-            if (item != null)
-            {
+            if(item != null) {
                 _shopCart.DeleteFromCart(item);
             }
             return RedirectToAction("Index");
         }
-
     }
 }
