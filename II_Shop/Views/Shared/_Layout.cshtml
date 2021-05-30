@@ -15,7 +15,7 @@
                         <a class="nav-link @(ViewContext.HttpContext.Request.Path.ToString() == "/" ? "active" : "")" asp-controller="Home" asp-action="Index">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link @(ViewContext.HttpContext.Request.Path.ToString() == "/Cars/List" ? "active" : "")" href="/Cars/List">AllCars</a>
+                        <a class="nav-link @(ViewContext.HttpContext.Request.Path.ToString() == "/Cars/List" ? "active" : "")" href="/Cars/List">All Cars</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link @(ViewContext.HttpContext.Request.Path.ToString() == "/Cars/List/electric" ? "active" : "")" href="/Cars/List/electric">Electric Cars</a>

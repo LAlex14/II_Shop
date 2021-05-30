@@ -1,6 +1,6 @@
 ﻿﻿document.addEventListener("DOMContentLoaded", function () {
-    let searchInput = document.querySelector("#searchInput");
-    let searchBtn = document.querySelector("#searchBtn");
+    const searchInput = document.querySelector("#searchInput");
+    const searchBtn = document.querySelector("#searchBtn");
 
     searchBtn.disabled = true; //setting button state to disabled
 

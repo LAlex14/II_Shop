@@ -1,7 +1,7 @@
 ﻿@model CarsListViewModel
 
     <div class="container mt-4">
-        <h1>All @Model.CurrCategory cars:</h1>
+        <h1>All available @Model.CurrCategory cars:</h1>
         <div class="row mt-4 mb-2">
             @{ foreach(Car car in Model.allCars) {
                     @await Html.PartialAsync("AllCars", car) } }
