@@ -8,7 +8,7 @@
             <div class="form-group">
                 <label asp-for="name">Name:</label>
                 <div class="col-12 mb-2">
-                    <input asp-for="name" class="form-control" pattern="[A-Za-z' -]{1,32}"  required />
+                    <input asp-for="name" class="form-control" pattern="[A-Za-z][A-Za-z' -]{1,32}"  required />
                     <details class="text-start text-muted small">
                         <summary class="small">Validation rules</summary>
                             <ul class="small">
@@ -21,7 +21,7 @@
             <div class="form-group mb-2">
                 <label asp-for="surname">Surname:</label>
                 <div class="col-12">
-                    <input asp-for="surname" class="form-control" pattern="[A-Za-z' -]{1,32}" required />
+                    <input asp-for="surname" class="form-control" pattern="[A-Za-z][A-Za-z' -]{1,32}" required />
                     <details class="text-start text-muted small">
                         <summary class="small">Validation rules</summary>
                             <ul class="small">
@@ -34,7 +34,7 @@
             <div class="form-group mb-2">
                 <label asp-for="adress">Complete address:</label>
                 <div class="col-12">
-                    <input asp-for="adress" class="form-control" pattern="[a-zA-Z0-9 /\\@@#$%&,().+-]{3,100}" required />
+                    <input asp-for="adress" class="form-control" pattern="[A-Za-z0-9][a-zA-Z0-9 /\\@@#$%&,().+-]{3,100}" required />
                     <details class="text-start text-muted small">
                         <summary class="small">Recommended format and validation vules</summary>
                         <small>Business's name (if applicable), Street address, City, State and ZIP code, Country</small>
